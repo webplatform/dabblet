@@ -12,20 +12,20 @@ if($gist_id) {
 	preg_match('#\bgist\/[\da-f]+\/([\da-f]+)#i', $_SERVER['REQUEST_URI'], $gist_rev);
 
 	$gist_rev = $gist_rev[1];
-	
+
 	$uri = "https://api.github.com/gists/$gist_id";
-	
+
 	if($gist_rev) {
 		$uri .= "/$gist_rev";
 	}
-	
+
 	$uri .= "?client_id=$client_id&client_secret=$client_secret";
-	
+
 	try {
 		//curl call with user agent header.
-		$curl = curl_init();		
-		$agent= 'Dabblet.com';
-		
+		$curl = curl_init();
+    $agent= "Dabblet/1.0.7 WebPlatform.org Contact: renoir@w3.org";
+
 		curl_setopt_array($curl, array(
 			CURLOPT_RETURNTRANSFER => 1,
 			CURLOPT_URL => $uri,
@@ -33,17 +33,17 @@ if($gist_id) {
 			CURLOPT_SSL_VERIFYHOST => 0,
 			CURLOPT_VERBOSE => 0,
 			CURLOPT_USERAGENT => $agent
-		));		
-		
+		));
+
 		$raw = curl_exec($curl);
 		curl_close($curl);
 	}
 	catch(Exception $e) {
 		echo $e;
 	}
-	
+
 	//echo $uri;
-	
+
 	if($raw) {
 		if(function_exists('json_decode')) {
 			$data = json_decode($raw, true);
@@ -102,7 +102,7 @@ if (!$js) {
 	|| $settings['prefixfree']
 	|| $settings['settings']['prefixfree']
 	): ?>
-<script src="http://dabblet.com/code/prefixfree.min.js"></script>
+<script src="/code/prefixfree.min.js"></script>
 <? endif; ?>
 <? if ($js): ?>
 <script>
@@ -113,6 +113,20 @@ if (parent === window) {
 }
 </script>
 <? endif; ?>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/"
+    _paq.push(['setTrackerUrl', u+'js/']);
+    _paq.push(['setSiteId', 6]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
 </head>
 <body><?= $html ?></body>
 </html>

@@ -1,25 +1,65 @@
+
+/**
+ * CSS rules that apply to both the dabblet app and subpages
+ */
+ 
+@font-face {
+	font-family: 'Dabblet';
+	src: url(/img/dabblet.ttf);
+}
+
+@font-face{
+    font-family: 'Bitter';
+    font-weight: bold;
+    src: url('//www.webplatform.org/assets/fonts/bitter-bold-webfont.eot');
+    src: url('//www.webplatform.org/assets/fonts/bitter-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('//www.webplatform.org/assets/fonts/bitter-bold-webfont.woff') format('woff'),
+         url('//www.webplatform.org/assets/fonts/bitter-bold-webfont.ttf') format('truetype'),
+         url('//www.webplatform.org/assets/fonts/bitter-bold-webfont.svg#BitterRegular') format('svg');
+}
+
+@font-face{
+    font-family: 'Gudea';
+    font-weight: normal;
+    src: url('//www.webplatform.org/assets/fonts/gudea-regular-webfont.eot');
+    src: url('//www.webplatform.org/assets/fonts/gudea-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('//www.webplatform.org/assets/fonts/gudea-regular-webfont.woff') format('woff'),
+         url('//www.webplatform.org/assets/fonts/gudea-regular-webfont.ttf') format('truetype'),
+         url('//www.webplatform.org/assets/fonts/gudea-regular-webfont.svg#GudeaRegular') format('svg');
+}
+
+@font-face{
+    font-family: 'Gudea';
+    font-weight: bold;
+    src: url('//www.webplatform.org/assets/fonts/gudea-bold-webfont.eot');
+    src: url('//www.webplatform.org/assets/fonts/gudea-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('//www.webplatform.org/assets/fonts/gudea-bold-webfont.woff') format('woff'),
+         url('//www.webplatform.org/assets/fonts/gudea-bold-webfont.ttf') format('truetype'),
+         url('//www.webplatform.org/assets/fonts/gudea-bold-webfont.svg#GudeaRegular') format('svg');
+}
+
 /**
  * Variables
  */
-header,
+
 .popup,
-.dropdown {
-	background: hsla(200, 10%, 20%, .9) url(/img/noise.png);	
-	color: white;
-	text-shadow: 0 -1px 1px black, 0 -1px 2px black;
+.dropdown,
+.button,
+button {
+	border: 1px solid #cfc6b0;
+	background: url(img/noise.png) hsl(44, 39%, 90%);
+	text-shadow: 0 1px 1px white;
 }
 
 .popup,
 .dropdown {
-	border: 1px solid rgba(0,0,0,.4);
 	border-radius: .5em;
-	box-shadow: 0 1px rgba(255,255,255,.3) inset,
-				.2em .2em .6em black;
+	box-shadow: 0 1px white inset,
+				.2em .2em .6em rgba(0,0,0,.3);
 }
 
 .popup > .content {
 	background: hsl(24, 20%, 95%) url(/img/noise.png);
-	color: black;
 	text-shadow: 0 1px white;
 	box-shadow: 0 .1em .5em rgba(0,0,0,.8) inset;
 }
@@ -31,28 +71,14 @@ menu > .command:not([data-disabled]) {
 
 .popup > .close:hover,
 menu > .command:not([data-disabled]):hover {
-	background: rgba(0,0,0,.3);
-	box-shadow: .05em .05em .25em black inset;
+	background: #694D9F;
+	color: white;
+	text-shadow: 0 -1px 1px black;
 }
 
 .popup > .close:active,
 menu > .command:not([data-disabled]):active {
-	background: rgba(0,0,0,.4);
-	box-shadow: .15em .15em .15em black inset;
-}
-
-/**
- * CSS rules that apply to both the dabblet app and subpages
- */
- 
-@font-face {
-	font-family: 'Dabblet';
-	src: url(/img/dabblet.ttf);
-}
-
-@font-face {
-	font-family: Primary;
-	src: local('Baskerville');
+	box-shadow: .05em .05em .25em rgba(0,0,0,.5) inset;
 }
 
 @keyframes bugfix { from { padding: 0; } to { padding: 0; } }
@@ -70,7 +96,7 @@ html {
 body {
 	position: relative;
 	height: 100%;
-	border-top: 10px solid transparent;
+	border-top: 3.3em solid transparent;
 	box-sizing: border-box;
 }
 
@@ -80,44 +106,35 @@ a {
 }
 
 .button,
-button,
-.tab {
-	padding: .45em .6em;
-	border: 0;
-	border-radius: .3em;
-	color: inherit;
-	font: inherit;
-	text-align: center;
-	text-decoration: none;
-	cursor: pointer;
-	text-shadow: inherit;
-}
-
-.button,
 button {
 	float: left;
-	border: 1px solid rgba(0,0,0,.4);
+	padding: .45em .6em;
 	margin: 0 .2em;
-	background: url(/img/noise.png);
+	background-image: url(img/noise.png), linear-gradient(hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
+	background-repeat: no-repeat;
+	border-radius: .3em;
 	white-space: nowrap;
-	box-shadow: rgba(255, 255, 255, .4) 0 1px 0 inset, 
-				rgba(255, 255, 255, .3) 0 25px 30px -12px inset, 
-				rgba(0, 0, 0, .6) 0 1px 2px;
+	box-shadow: 0px 2px 2px -1px rgba(0,0,0,.1);
+	color: inherit;
+	text-transform: uppercase;
+	font-size: 90%;
+	line-height: 1.5;
+	font-weight: normal;
+	cursor: pointer;
 }
 
 button.with-symbol,
 .button.with-symbol {
 	font-family: Dabblet, sans-serif;
-	font-weight: normal;
+	font-size: 115%;
+	line-height: 1;
 }
 
 .button:hover,
 .button:active,
 button:hover,
-button:active,
-.tab:hover,
-.tab:active {
-	background-color: black;
+button:active {
+	background-color: hsl(44, 39%, 95%);
 }
 
 header ~ * button,
@@ -142,35 +159,62 @@ header ~ .button:active {
 
 body > header {
 	position: absolute;
-	bottom: 100%;
+	top: -3.4em;
 	right: 0;
 	left: 0;
 	z-index: 10;
-	padding: .4em .5em 0;
-	border-bottom: 10px solid black;
-	background: url(/img/noise.png), linear-gradient(hsl(200, 10%, 20%), hsla(200, 10%, 20%, .9));
-	color: white;
+	padding: .5em .5em 1em;
+	background: url('//www.webplatform.org/assets/images/nav-bg.png') repeat-x bottom;
+	color: #74663e;
 	line-height: 1.1;
+	font: bold 95% Gudea;
 	font-weight: bold;
 	text-shadow: 0 -1px 1px black, 0 -1px 2px black;
-	transition: .5s 1s transform;
 }
-
-body > header:hover,
-body > header:active,
-body > header.focus {
-	transform: translateY(-10px) translateY(100%);
-	transition-delay: 0s;
-}
-
+	
 	body > header > h1 {
 		float: left;
-		height: 1.3em;
-		margin-right: .1em;
-		font: 190%/1.6 Dabblet, sans-serif;
-		text-shadow: .05em .05em .1em black;
-		-webkit-transform: translateZ(0); /* fix for chopped letters */
+		width: 65px;
+		height: 10px;
+		margin-right: .3em;
 	}
+	
+		body > header > h1 > a {
+			position: absolute;
+			top: 0;
+			height: 1.3em;
+			margin-right: .1em;
+			text-indent: -9999px;
+			overflow: hidden;
+			display: block;
+			width: inherit;
+			height: 65px;
+			border-radius: 0 0 7px 7px;
+			border: 1px solid white;
+			border-top: none;
+			background: #f9f7f3 url(//www.webplatform.org/assets/logo.png);
+			background: hsl(40, 29%, 96%) url(//www.webplatform.org/assets/logo.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 40px auto;
+			box-shadow: 1px 1px 1px #cbc6ba;
+		}
+		
+		body > header > h1 > .dropdown {
+			min-width: 3em;
+			margin-left: -.1em;
+			margin-top: 3em;
+			font: bold 55% Bitter, Gudea, sans-serif;
+			text-transform: uppercase;
+		}
+		
+			body > header > h1 > .dropdown:before {
+				left: 2.2em;	
+			}
+		
+			body > header > h1 > .dropdown .command:before {
+				content: none;
+			}
 	
 	body > header > .with-dropdown {
 		float: left;
@@ -184,14 +228,56 @@ body > header.focus {
 	
 		.tabs {
 			display: inline-block;
-			height: .75em;
-			margin: 0 33px 0 -.5em;
+			margin: 2px 33px 0 -.5em;
+			border-radius: 1em;
+			box-shadow: 0 -1px 1px white inset, .05em .1em .2em rgba(0,0,0,.4) inset;
+			background: rgba(0,0,0,.1);
+			color: hsl(38, 16%, 25%);
+			text-shadow: 0 1px 1px white;
 			white-space: nowrap;
-			font-size: 110%;
+			font-size: 100%;
 			line-height: 1.4;
-			-webkit-font-smoothing: antialiased; /* fix for WebKit inconsistency */
-			-webkit-transform: translateZ(0); /* fix for unhoverable tabs */
+			font-weight: normal;
 		}
+		
+			.tab {
+				position: relative;
+				display: inline-block;
+				top: 0;
+				padding: .45em .8em .4em;
+				border: 0;
+				border-radius: 2em;
+				margin: -.15em 0 0;
+				color: inherit;
+				font: inherit;
+				text-align: center;
+				text-decoration: none;
+				cursor: pointer;
+			}
+			
+			.tabs > input:checked + .tab,
+			.tab.active {
+				margin-top: -.3em;
+				background: hsl(184, 50%, 70%);
+				background-image: url(img/noise.png), linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.3));
+				border: 1px solid hsl(184, 50%, 65%);
+				color: hsl(184, 90%, 25%);
+				box-shadow: 0 1px hsla(0,0%,100%,.8) inset, 0 3px 5px -2px rgba(0,0,0,.5);
+			}
+			
+			.tab:hover,
+			.tab:active {
+				color: black;
+			}
+			
+				body[data-view="separate"] .tab .if-not-separate {
+					display: none;
+				}
+				
+				.tabs > label > .title {
+					overflow: hidden;
+					transition: 1s max-width;
+				}
 		
 		.controls-group {
 			float: right;
@@ -201,7 +287,7 @@ body > header.focus {
 	
 				
 		body[data-unsaved] button[title="Save"] {
-			text-shadow: 0 0 .2em #6cf, 0 0 .4em #6cf;
+			text-shadow: 0 0 .2em hsl(187, 61%, 60%), 0 0 .4em hsl(187, 61%, 60%);
 		}
 		
 		header > .with-dropdown > button:after,
@@ -212,14 +298,15 @@ body > header.focus {
 		.button:active,
 		button:active,
 		input:checked + label.button {
-			box-shadow: 0 2px 6px black inset;
+			box-shadow: 0 2px 6px rgba(0,0,0,.5) inset;
 		}
 		
 		input:checked + label.button {
-			background-color: rgba(0,0,0,.3);
+			background-color: rgba(0,0,0,.1);
 		}
 		
 		#currentuser {
+			display: none;
 			max-width: 12em;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -247,10 +334,6 @@ body > header.focus {
 			}
 		}
 		
-		#currentuser:not(:hover) {
-			background-color: transparent;
-		}
-		
 			header .user > img {
 				max-height: 1.4em;
 				margin: -.2em .3em -.2em -1.6em;
@@ -266,47 +349,9 @@ body > header.focus {
 		a.button[href^="/help/"] {
 			position: absolute;
 			right: 3px;
-			bottom: 5px;
+			top: .5em;
 			background-color: transparent;
 		}
-		
-		@keyframes flip {
-			from { transform: perspective(600px) rotate3d(1,0,0,180deg); }
-			  to { transform: perspective(600px) rotate3d(1,0,0,  0deg); }
-		}
-		
-		.tab {
-			position: relative;
-			top: 0;
-			display: inline-block;
-			padding: .5em .6em;
-			border: 0;
-			margin: 0 0 -5px;
-			background: rgba(0,0,0,.2);
-			cursor: pointer;
-			transform-origin: bottom;
-			border-radius: 5px;
-			box-shadow: .05em .1em .2em rgba(0,0,0,.7) inset;
-			text-shadow: inherit;
-			animation: flip .5s;
-		}
-		
-		.tabs > input:checked + .tab,
-		.tab.active {
-			background: black;
-			top: 2.5em;
-			animation: flip .6s;
-			transform-origin: top;
-		}
-		
-			body[data-view="separate"] .tab .if-not-separate {
-				display: none;
-			}
-			
-			.tabs > label > .title {
-				overflow: hidden;
-				transition: 1s max-width;
-			}
 		
 		.dropdown {
 			display: none;
@@ -315,8 +360,7 @@ body > header.focus {
 			min-width: 12em;
 			max-width: 400px;
 			padding: .3em;
-			margin: 2.2em 0 0 -1em;
-			font-family: sans-serif;
+			margin: 2.4em 0 0 -.8em;
 			text-align: left;
 			-webkit-transform: translateZ(0); /* fix for unhoverable dropdowns */
 		}
@@ -326,7 +370,7 @@ body > header.focus {
 			content: '';
 			position: absolute;
 			z-index: -1;
-			top: -6px;
+			top: -7px;
 			left: 2.5em;
 			width: 12px;
 			height: 12px;
@@ -334,10 +378,10 @@ body > header.focus {
 			border-bottom-width:0;
 			border-right-width:0;
 			margin-left: -9px;
-			background: url(/img/noise.png), linear-gradient(-45deg, hsl(200, 10%, 20%) 52%, hsla(200, 10%, 20%, 0) 55%);
+			background: url(/img/noise.png) hsl(44, 39%, 90%);
 			background-origin: border-box;
 			transform: rotate(45deg);
-			box-shadow: 1px 0 rgba(255,255,255,.3) inset;
+			box-shadow: 1px 0 white inset;
 		}
 		
 		.with-dropdown {
@@ -428,8 +472,8 @@ body > header.focus {
 				border: 0;
 				margin: .1em 0;
 				background: rgba(255,255,255,.5);
-				background: linear-gradient(90deg, transparent, black 50%, transparent) top,
-							linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.5) 50%, rgba(255,255,255,0)) bottom;
+				background: linear-gradient(90deg, hsla(43, 24%, 75%,0), hsl(43, 24%, 75%) 50%, hsla(43, 24%, 75%,0)) top,
+				            linear-gradient(90deg, hsla(0,0%,100%,0), white 50%, hsla(0,0%,100%,0)) bottom;
 				background-repeat: repeat-x;
 				background-size: 100% 1px;
 			}
@@ -470,7 +514,7 @@ body[data-loading] > #loader {
 /**
  * Responsive shit
  */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
 	html {
 		font-size: 90%;
 	}
@@ -498,18 +542,6 @@ body[data-loading] > #loader {
 }
 
 @media (max-width: 800px) {
-	html {
-		font-size: 95%;
-	}
-	
-	.controls-group {
-		margin-top: .2em;
-	}
-	
-	.tabs {
-		height: 2.2em;
-	}
-	
 	.popup {
 		width: 290px;
 		padding: .5em .5em 5em;
@@ -531,31 +563,6 @@ body[data-loading] > #loader {
 			column-rule: 3px dotted slategray;
 			column-fill: balance;
 		}
-}
-
-
-@media (min-height: 799px) and (min-width: 1000px) {
-	body {
-		border-top-width: 3.4em;
-	}
-	
-	body > header,
-	body > header:hover,
-	body > header:active,
-	body > header.focus {
-		transform: none;
-	}
-	
-	.tabs > input + label,
-	.tabs > input:checked + .tab,
-	.tab.active {
-		animation: none;
-	}
-	
-	.tabs > input:checked + .tab,
-	.tab.active {
-		top: 0;
-	}
 }
 
 html.document > body {

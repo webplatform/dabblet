@@ -1,7 +1,7 @@
 RewriteEngine On
 
 RewriteBase /
-RewriteCond %{HTTP_HOST} ^result\.dabblet\.com
+RewriteCond %{HTTP_HOST} ^result\.webplatform\.org
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
@@ -10,4 +10,4 @@ RewriteRule . /index.php [L]
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ http://result.dabblet.com/$1 [R=301,L]
+RewriteRule ^(.*)$ http://result.webplatform.org/$1 [R=301,L]

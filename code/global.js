@@ -3,7 +3,7 @@
  */
  
 var gist = {
-	clientId: 'da931d37076424f332ef',
+	clientId: '7d69ddb5e9aaca4db172', /* WebPlatform’s */
 	
 	oauth: [
 		// Step 1: Ask permission

@@ -11,7 +11,7 @@ if($code) {
 	curl_setopt($ch, CURLOPT_POSTFIELDS, "client_id=$client_id&client_secret=$client_secret&code=$code");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Origin: http://dabblet.com'
+		'Origin: http://code.webplatform.org'
 	));
 	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
@@ -25,7 +25,6 @@ if($code) {
 	}
 }
 ?>
-
 <script>
 opener.gist.oauth[1]('<?= $token ?>');
 close();

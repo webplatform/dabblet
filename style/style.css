@@ -28,23 +28,6 @@ label.focus {
 	outline: 2px auto -webkit-focus-ring-color; /* Warning: nonstandard */
 }
 
-button, .button {
-	padding: .45em .6em;
-	border: 1px solid rgba(0,0,0,.4);
-	border-radius: .3em;
-	white-space: nowrap;
-	text-decoration: none;
-	background-image: url(/img/noise.png);
-	background-color: inherit;
-	color: inherit;
-	font: inherit;
-	box-shadow: rgba(255, 255, 255, .4) 0 1px 0 inset, 
-				rgba(255, 255, 255, .3) 0 25px 30px -12px inset, 
-				rgba(0, 0, 0, .6) 0 1px 2px;
-	text-shadow: 0 -1px 1px black, 0 -1px 2px black;
-	cursor: pointer;
-}
-
 button.danger,
 .button.danger {
 	background-color: rgba(196, 0, 0, .8);
@@ -65,34 +48,31 @@ input[type="checkbox"] {
 	border: 0;
 	box-sizing: border-box;
 	margin: 0;
-	background: rgba(0,0,0,.2);
-	color: inherit;
+	background: rgba(0,0,0,.1);
 	font: inherit;
 	letter-spacing: inherit;
 	outline: none;
 	border-radius: 2px;
-	box-shadow: 1px 1px 5px black inset;
+	box-shadow: 1px 1px 5px rgba(0,0,0,.3) inset;
 	text-align: right;
 	overflow: visible;
-	color: transparent;
 	font-size: 1.2rem;
 	line-height: .6rem;
 }
 
-input[type="checkbox"]:checked {
-	color: white;
-	text-shadow: inherit;
-}
-
-input[type="checkbox"]::after {
-	content: '✓';
-}
+	input[type="checkbox"]:checked {
+		text-shadow: inherit;
+	}
+	
+	input[type="checkbox"]::after {
+		content: '✓';
+	}
 
 .-webkit- input[type="range"] {
 	appearance: none;
 	height: 1px;
-	border-top: 1px solid black;
-	background: hsla(0,0%,100%,.3);
+	border-top: 1px solid #cfc6b0;
+	background: white;
 }
 	
 	/* Warning: nonstandard */
@@ -100,14 +80,13 @@ input[type="checkbox"]::after {
 		appearance: none;
 		width: 1.4em;
 		height: 1.4em;
-		border: 1px solid rgba(0,0,0,.4);
+		border: 1px solid #cfc6b0;
 		border-radius: 50%;
 		cursor: pointer;
-		background: 
-			hsl(200, 10%, 20%) url(/img/noise.png);
-		box-shadow: rgba(255, 255, 255, .3) 0 1px 0 inset, 
-					rgba(255, 255, 255, .1) 0 5px 6px -2px inset, 
-					rgba(0, 0, 0, .6) 0 1px 2px;
+		background: url(img/noise.png) hsl(44, 39%, 90%);
+		box-shadow: white 0 1px 0 inset, 
+					rgba(255, 255, 255, .5) 0 5px 6px -2px inset, 
+					rgba(0, 0, 0, .3) 0 1px 2px;
 	}
 	
 	input[type="range"]::-webkit-slider-thumb:active {
@@ -150,20 +129,17 @@ html.supports-range label.slider {
 	}
 	
 	.segmented-control > input[type="radio"] + label:first-of-type {
-		border-right: 0;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 	}
 	
-	.segmented-control > input[type="radio"] + label:last-of-type {
+	.segmented-control > input[type="radio"] + label:not(:first-of-type) {
 		border-left: 0;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
 	}
 	
-	.segmented-control > input[type="radio"] + label:nth-of-type(n+2):nth-last-of-type(n+2) {
-		border-left: 0;
-		border-right: 0;
+	.segmented-control > input[type="radio"] + label:last-of-type {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
 	}
 	
 .no-cors #cloud {
@@ -196,7 +172,7 @@ html.supports-range label.slider {
 	box-sizing: border-box;
 	height: 100%;
 	overflow: auto;
-	background: url(/img/noise.png) hsl(24, 20%, 95%);
+	background: url('http://docs.webplatform.org/w/skins/webplatform/images/bg-pattern.png') #e6decc;
 	font: 100%/1.5em Monaco, Consolas, Inconsolata, 'Deja Vu Sans Mono', 'Droid Sans Mono', 'Andale Mono', 'Lucida Console', monospace;
 	tab-size: 4;
 	word-wrap: normal;
@@ -459,7 +435,7 @@ body[data-page="javascript"] #jserror.active {
 }
 
 .comment {
-	color: slategray;
+	color: hsl(44, 30%, 43%);
 }
 
 .property,
@@ -467,21 +443,21 @@ body[data-page="javascript"] #jserror.active {
 .boolean,
 .number,
 .popup > .content a {
-	color: #905;
+	color: hsl(187, 61%, 37%);
 }
 
 .selector,
 .attr-name,
 .string,
 .popup > .content a:hover {
-	color: #690;
+	color: #694D9F;
 }
 
 .keyword,
 .atrule,
 .attr-value,
 .popup > .content a:active {
-	color: #07a;
+	color: hsl(35, 94%, 40%);
 }
 
 .operator {
@@ -490,7 +466,7 @@ body[data-page="javascript"] #jserror.active {
 }
 
 .important {
-	color: #e90;
+	color: #E54E27;
 	font-weight: bold;
 }
 
@@ -778,4 +754,8 @@ body[data-page="javascript"] #jserror.active {
 	color: white;
 	text-align: center;
 	text-shadow: .02em .02em .06em black;
+}
+
+#gist-user {
+	display: none;
 }
