@@ -1,9 +1,5 @@
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} !^code\.webplatform\.org
-RewriteCond %{HTTP_HOST} !^result\.webplatform\.org
-RewriteRule ^(.*)$ http://code.webplatform.org/$1 [R=301,L]
-
 RewriteBase /
 RewriteCond %{REQUEST_METHOD} POST
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -13,6 +9,3 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^.*$ /index.html [L]
-
-# Compress code
-AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript image/svg+xml application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript
