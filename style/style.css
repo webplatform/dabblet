@@ -5,7 +5,7 @@
 #easing > svg,
 #fontfamily,
 #entity {
-	background: url(/img/noise.png), linear-gradient(hsla(200, 10%, 20%, .8), hsl(200, 10%, 20%));
+	background: url('/img/noise.png'), linear-gradient(hsla(200, 10%, 20%, .8), hsl(200, 10%, 20%));
 }
 
 /**
@@ -83,7 +83,7 @@ input[type="checkbox"] {
 		border: 1px solid #cfc6b0;
 		border-radius: 50%;
 		cursor: pointer;
-		background: url(img/noise.png) hsl(44, 39%, 90%);
+		background: url('/img/noise.png') hsl(44, 39%, 90%);
 		box-shadow: white 0 1px 0 inset, 
 					rgba(255, 255, 255, .5) 0 5px 6px -2px inset, 
 					rgba(0, 0, 0, .3) 0 1px 2px;
@@ -172,7 +172,7 @@ html.supports-range label.slider {
 	box-sizing: border-box;
 	height: 100%;
 	overflow: auto;
-	background: url('http://docs.webplatform.org/w/skins/webplatform/images/bg-pattern.png') #e6decc;
+	background: url('//www.webplatform.org/assets/bg-pattern.png') #e6decc;
 	font: 100%/1.5em Monaco, Consolas, Inconsolata, 'Deja Vu Sans Mono', 'Droid Sans Mono', 'Andale Mono', 'Lucida Console', monospace;
 	tab-size: 4;
 	word-wrap: normal;
@@ -306,8 +306,8 @@ body[data-view="split"] .for-code {
 	right: 0;
 	padding-left: .6em;
 	margin-top: 1em;
-	background: url(/img/noise.png) hsla(24, 20%, 50%,.05);
-	background: url(/img/noise.png), linear-gradient(left, hsla(24, 20%, 50%,.08) 70%, hsla(24, 20%, 50%,0));
+	background: url('/img/noise.png') hsla(24, 20%, 50%,.05);
+	background: url('/img/noise.png'), linear-gradient(left, hsla(24, 20%, 50%,.08) 70%, hsla(24, 20%, 50%,0));
 }
 
 .editor.page:not(.focus) > .line-highlight,
@@ -603,16 +603,16 @@ body[data-page="javascript"] #jserror.active {
 
 	#abslength:before {
 		bottom: -7px;
-		background: url(/img/noise.png),
-					linear-gradient(135deg, hsla(200, 10%, 20%, 0) 47%, hsl(200, 10%, 20%) 48%);
+		background:	url('/img/noise.png'),
+				linear-gradient(135deg, hsla(200, 10%, 20%, 0) 47%, hsl(200, 10%, 20%) 48%);
 	}
 	
 	#abslength.flipped:before {
 		border: inherit;
 		border-right-width: 0;
 		border-bottom-width: 0;
-		background: url(/img/noise.png),
-					linear-gradient(135deg, hsla(200, 10%, 20%, 0.6), hsla(200, 10%, 20%, 0.8) 46%, transparent 46%);
+		background: 	url('/img/noise.png'),
+				linear-gradient(135deg, hsla(200, 10%, 20%, 0.6), hsla(200, 10%, 20%, 0.8) 46%, transparent 46%);
 	}
 
 	#abslength[data-size="small"]:before {
@@ -631,11 +631,11 @@ body[data-page="javascript"] #jserror.active {
 		background: 
 			linear-gradient(left, transparent 19px, rgba(255,255,255,.6) 19px) left top repeat-x,
 			linear-gradient(left, transparent 4px, rgba(255,255,255,.4) 4px) left top repeat-x,
-			url(/img/noise.png), linear-gradient(hsla(200, 10%, 20%, .8), hsl(200, 10%, 20%));
+			url('/img/noise.png'), linear-gradient(hsla(200, 10%, 20%, .8), hsl(200, 10%, 20%));
 		background: 
 			linear-gradient(to right, transparent 19px, rgba(255,255,255,.6) 19px) left top repeat-x,
 			linear-gradient(to right, transparent 4px, rgba(255,255,255,.4) 4px) left top repeat-x,
-			url(/img/noise.png), linear-gradient(hsla(200, 10%, 20%, .8), hsl(200, 10%, 20%));
+			url('/img/noise.png'), linear-gradient(hsla(200, 10%, 20%, .8), hsl(200, 10%, 20%));
 		background-size: 20px 10px, 5px 5px, auto, auto;
 		box-shadow: none;
 	}
@@ -656,7 +656,7 @@ body[data-page="javascript"] #jserror.active {
 	
 	#time:after,
 	#angle:after {
-		background: url(/img/noise.png);
+		background: url('/img/noise.png');
 		z-index: 2;
 	}
 	

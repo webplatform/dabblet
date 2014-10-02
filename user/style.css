@@ -3,7 +3,7 @@
  */
  
 html {
-	background: url(../img/noise.png) hsl(24, 20%, 95%);
+	background: url('/img/noise.png') hsl(24, 20%, 95%);
 }
 
 body {
@@ -162,7 +162,7 @@ div[role=main] {
 	
 	.dabblet iframe[data-src],
 	.dabblet iframe.loading {
-		background: url(/img/loader-animated.gif) no-repeat center;
+		background: url('/img/loader-animated.gif') no-repeat center;
 	}
 	
 	.dabblet > .info {

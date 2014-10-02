@@ -104,7 +104,7 @@ window.Dabblet = $u.attach({
 			
 			result.contentWindow.postMessage(JSON.stringify({
 				action: 'title',
-				data: title + ' ✿ Dabblet result'
+				data: title + ' ✪  WebPlatform code result'
 			}), '*');
 			
 			if(!raw) {
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		a.href = '';
 		a.target = '_blank';
-		a.title = 'Go to full page dabblet';
+		a.title = 'Go to full page preview';
 	}
 	else {
 		a.onclick = Dabblet.wipe;
@@ -428,7 +428,7 @@ $$('.editor.page > pre').forEach(function(editor){
 		    code = this.textContent;
 		
 		if(id === 'css') {
-			document.title = Dabblet.title(code) + ' ✿ dabblet.com';
+			document.title = Dabblet.title(code) + ' code.webplatform.org';
 		
 			Dabblet.update.CSS(code);
 		}

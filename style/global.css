@@ -5,7 +5,7 @@
  
 @font-face {
 	font-family: 'Dabblet';
-	src: url(/img/dabblet.ttf);
+	src: url('/img/dabblet.ttf');
 }
 
 @font-face{
@@ -47,7 +47,7 @@
 .button,
 button {
 	border: 1px solid #cfc6b0;
-	background: url(img/noise.png) hsl(44, 39%, 90%);
+	background: url('/img/noise.png') hsl(44, 39%, 90%);
 	text-shadow: 0 1px 1px white;
 }
 
@@ -59,7 +59,7 @@ button {
 }
 
 .popup > .content {
-	background: hsl(24, 20%, 95%) url(/img/noise.png);
+	background: hsl(24, 20%, 95%) url('/img/noise.png');
 	text-shadow: 0 1px white;
 	box-shadow: 0 .1em .5em rgba(0,0,0,.8) inset;
 }
@@ -110,7 +110,7 @@ button {
 	float: left;
 	padding: .45em .6em;
 	margin: 0 .2em;
-	background-image: url(img/noise.png), linear-gradient(hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
+	background-image: url('/img/noise.png'), linear-gradient(hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
 	background-repeat: no-repeat;
 	border-radius: .3em;
 	white-space: nowrap;
@@ -192,8 +192,8 @@ body > header {
 			border-radius: 0 0 7px 7px;
 			border: 1px solid white;
 			border-top: none;
-			background: #f9f7f3 url(//www.webplatform.org/assets/logo.png);
-			background: hsl(40, 29%, 96%) url(//www.webplatform.org/assets/logo.svg);
+			background: #f9f7f3 url('//www.webplatform.org/assets/logo.png');
+			background: hsl(40, 29%, 96%) url('//www.webplatform.org/assets/logo.svg');
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 40px auto;
@@ -259,7 +259,7 @@ body > header {
 			.tab.active {
 				margin-top: -.3em;
 				background: hsl(184, 50%, 70%);
-				background-image: url(img/noise.png), linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.3));
+				background-image: url('/img/noise.png'), linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.3));
 				border: 1px solid hsl(184, 50%, 65%);
 				color: hsl(184, 90%, 25%);
 				box-shadow: 0 1px hsla(0,0%,100%,.8) inset, 0 3px 5px -2px rgba(0,0,0,.5);
@@ -378,7 +378,7 @@ body > header {
 			border-bottom-width:0;
 			border-right-width:0;
 			margin-left: -9px;
-			background: url(/img/noise.png) hsl(44, 39%, 90%);
+			background: url('/img/noise.png') hsl(44, 39%, 90%);
 			background-origin: border-box;
 			transform: rotate(45deg);
 			box-shadow: 1px 0 white inset;
@@ -498,7 +498,7 @@ body > header {
 	padding-top: 100px;
 	margin-top: -50px;
 	margin-left: -50px;
-	background: url(/img/loader.png) no-repeat left top;
+	background: url('/img/loader.png') no-repeat left top;
 	color: rgba(0,0,0,.5);
 	font-weight: bold;
 	text-align: center;
@@ -619,7 +619,7 @@ section.page:not(.focus):not(:hover)::-webkit-scrollbar {
 
 ::-webkit-scrollbar-thumb {
 	min-height: 20px;
-	background: url(/img/noise.png);
+	background: url('/img/noise.png');
 	background-clip: content-box;
 	box-shadow: 0 0 0 5px hsla(24, 20%, 50%,.4) inset;
 }
