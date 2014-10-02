@@ -428,7 +428,7 @@ $$('.editor.page > pre').forEach(function(editor){
 		    code = this.textContent;
 		
 		if(id === 'css') {
-			document.title = Dabblet.title(code) + ' code.webplatform.org';
+			document.title = Dabblet.title(code) + '  ✪  WebPlatform code';
 		
 			Dabblet.update.CSS(code);
 		}
